@@ -2,11 +2,11 @@ import os
 
 from setuptools import find_packages, setup
 
-NAME = "dailycheckin"
-FOLDER = "dailycheckin"
-DESCRIPTION = "dailycheckin"
-EMAIL = "133397418@qq.com"
-AUTHOR = "Sitoi"
+NAME = "dailycheckin-liang"
+FOLDER = "dailycheckin_liang"
+DESCRIPTION = "dailycheckin-liang"
+EMAIL = "1924196944@qq.com"
+AUTHOR = "LiangGame"
 REQUIRES_PYTHON = ">=3.9.0"
 VERSION = None
 
@@ -63,8 +63,8 @@ setup(
     author=AUTHOR,
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
-    url="https://sitoi.cn",
-    project_urls={"Documentation": "https://sitoi.github.io/dailycheckin/"},
+    url="https://github.com/LiangGame/",
+    project_urls={"Documentation": "https://github.com/LiangGame/dailycheckin/"},
     packages=find_packages(exclude=("config",)),
     install_requires=REQUIRED,
     include_package_data=True,
