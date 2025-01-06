@@ -190,6 +190,26 @@ def message2pushplus(pushplus_token, content, pushplus_topic=None):
     return
 
 
+def message2wxpuser(wxpuser_tk: str, wxpusher_uid: str, content: str):
+    print("wxpuser 推送开始")
+    url = "https://wxpusher.zjiecode.com/api/send/message"
+    headers = {"Content-Type": "application/json"}
+    content = content.replace("\n", "<br/>")
+    data = f'<h1>每日签到</h1><br/><p style="color:black;">{content}</p><br/>'
+    _uid = [wxpusher_uid]
+    _body = {
+        "appToken": wxpuser_tk,  # 必传
+        "content": data,  # 必传
+        "summary": "dailycheckin 每日签到",
+        "contentType": 2,
+        "uids": _uid,
+        "verifyPayType": 0,
+    }
+    res = requests.post(url=url, headers=headers, json=_body).json()
+    print(res)
+    return
+
+
 def important_notice():
     datas = requests.get(
         url="https://api.github.com/repos/Sitoi/dailycheckin/issues?state=open&labels=通知"
@@ -232,6 +252,8 @@ def push_message(content_list: list, notice_info: dict):
     pushplus_token = notice_info.get("pushplus_token")
     pushplus_topic = notice_info.get("pushplus_topic")
     merge_push = notice_info.get("merge_push")
+    wxpusher_tk = notice_info.get("wxpusher_tk")
+    wxpusher_uid = notice_info.get("wxpusher_uid")
     content_str = "\n————————————\n\n".join(content_list)
     message_list = [content_str]
     try:
@@ -340,6 +362,11 @@ def push_message(content_list: list, notice_info: dict):
                 )
             except Exception as e:
                 print("Telegram 推送失败", e)
+        if wxpusher_tk and wxpusher_uid:
+            try:
+                message2wxpuser(wxpuser_tk=wxpusher_tk, wxpusher_uid=wxpusher_uid, content=message)
+            except Exception as e:
+                print("wxpusher 推送失败", e)
 
 
 if __name__ == "__main__":
