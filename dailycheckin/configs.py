@@ -1,7 +1,7 @@
 import json
 import os
 
-from dailycheckin import CheckIn
+from .. import CheckIn
 
 
 def checkin_map():

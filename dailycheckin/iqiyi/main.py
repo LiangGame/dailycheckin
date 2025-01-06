@@ -9,7 +9,7 @@ from uuid import uuid4
 
 import requests
 
-from dailycheckin import CheckIn
+from .. import CheckIn
 
 
 class IQIYI(CheckIn):

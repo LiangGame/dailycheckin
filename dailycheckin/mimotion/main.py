@@ -6,7 +6,7 @@ import time
 
 import requests
 
-from dailycheckin import CheckIn
+from .. import CheckIn
 
 
 class MiMotion(CheckIn):

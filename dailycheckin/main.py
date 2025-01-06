@@ -6,9 +6,9 @@ from datetime import datetime, timedelta
 
 import requests
 
-from dailycheckin.__version__ import __version__
-from dailycheckin.configs import checkin_map, get_checkin_info, get_notice_info
-from dailycheckin.utils.message import push_message
+from __version__ import __version__
+from configs import checkin_map, get_checkin_info, get_notice_info
+from utils.message import push_message
 
 
 def parse_arguments():

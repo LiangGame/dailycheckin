@@ -4,7 +4,7 @@ from urllib import parse
 
 import requests
 
-from dailycheckin import CheckIn
+from .. import CheckIn
 
 
 class Baidu(CheckIn):

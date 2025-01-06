@@ -1,9 +1,9 @@
-from dailycheckin import CheckIn
+from .. import CheckIn
 import os
 import json
 
-from dailycheckin.configs import get_notice_info
-from dailycheckin.utils.message import push_message
+from ..configs import get_notice_info
+from ..utils.message import push_message
 
 
 class TestNotice(CheckIn):

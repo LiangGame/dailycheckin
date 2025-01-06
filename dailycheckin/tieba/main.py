@@ -5,7 +5,7 @@ import re
 
 import requests
 
-from dailycheckin import CheckIn
+from .. import CheckIn
 
 
 class Tieba(CheckIn):

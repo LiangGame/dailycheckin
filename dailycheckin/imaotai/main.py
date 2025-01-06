@@ -9,7 +9,7 @@ import time
 import requests
 from Crypto.Cipher import AES
 
-from dailycheckin import CheckIn
+from .. import CheckIn
 
 
 class Encrypt:

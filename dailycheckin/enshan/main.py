@@ -5,7 +5,7 @@ import re
 import requests
 import urllib3
 
-from dailycheckin import CheckIn
+from .. import CheckIn
 
 urllib3.disable_warnings()
 

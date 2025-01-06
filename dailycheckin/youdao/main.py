@@ -3,7 +3,7 @@ import os
 
 import requests
 
-from dailycheckin import CheckIn
+from .. import CheckIn
 
 
 class YouDao(CheckIn):
